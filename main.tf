@@ -1,3 +1,14 @@
+resource "aws_vpc" "myvpc" {
+  cidr_block = "10.0.0.0/16"
+  
+}
+resource "aws_subnet" "mysubnet" {
+  vpc_id= aws_vpc.myvpc.id
+  
+}
+
+
+
 # the goal was to create an Instance, create a role that has s3 read and write (Get and Put) permissions to an existing bucket
 # add permission to the dynamoDB table we created if it exist.
 
